@@ -12,6 +12,7 @@ int main(int argc, char* argv[])
         WriteProcessMemory(Process_Handle, Alloc, DLL_Path, strlen(DLL_Path) + 1, NULL);
     }
     HANDLE Remote_Thread = CreateRemoteThread(Process_Handle, NULL, 0, (LPTHREAD_START_ROUTINE)LoadLibraryA, Alloc, 0, NULL);
+    CloseHandle(Remote_Thread);
     CloseHandle(Process_Handle);
 
     return 0;

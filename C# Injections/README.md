@@ -1,3 +1,3 @@
 ## C# Injections
 
-Collection of local and remote injections for C# rolled into one
+Collection of shellcode execution and remote injections for C# rolled into one
